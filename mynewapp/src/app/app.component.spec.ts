@@ -1,15 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { SeriesComponent } from './series/series.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterModule.forRoot([])
+        RouterTestingModule, HttpClientTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent, SeriesComponent
       ],
     }).compileComponents();
   });
