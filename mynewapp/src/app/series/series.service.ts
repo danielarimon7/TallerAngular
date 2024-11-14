@@ -9,12 +9,17 @@ import { Serie } from './serie';
 })
 export class SeriesService {
 
+  private apiUrl2 = 'http://localhost:8080/api/';
   private apiUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
 
   getSeries(): Observable<Serie[]>{
     return this.http.get<Serie[]>(this.apiUrl);
+  }
+
+  getSeriesList(): Observable<Serie[]>{
+    return this.http.get<Serie[]>(this.apiUrl2);
   }
 
 }
